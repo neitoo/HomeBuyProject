@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:layout_editor_absoluteX="1dp"
+    tools:layout_editor_absoluteY="-6dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#3d3d4d"
+        tools:context=".setting_homes">
+
+        <Button
+            android:id="@+id/SearchButton"
+            android:layout_width="0dp"
+            android:layout_height="61dp"
+            android:layout_below="@+id/costAfter"
+            android:layout_marginTop="36dp"
+            android:layout_marginBottom="50dp"
+            android:background="@drawable/button"
+            android:fontFamily="@font/comfortaa"
+            android:text="@string/Create"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            app:backgroundTint="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/costBefore"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/costAfter"
+            app:layout_constraintTop_toBottomOf="@+id/costAfter"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/Text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/comfortaa"
+            android:text="Выберите лучший дом для вас"
+            android:textColor="#ffffff"
+            android:textColorHint="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/Text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/comfortaa"
+            android:text="Тип недвижимости"
+            android:textColor="#ffffff"
+            android:textColorHint="#000000"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/Text1"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/Text1"
+            app:layout_constraintTop_toBottomOf="@+id/Text1" />
+
+        <TextView
+            android:id="@+id/Text3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/comfortaa"
+            android:text="Выберите тип пространства"
+            android:textColor="#9EFFFFFF"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/Text2"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/Text2"
+            app:layout_constraintTop_toBottomOf="@+id/Text2" />
+
+        <TextView
+            android:id="@+id/Text4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/comfortaa"
+            android:text="Комнаты"
+            android:textColor="#ffffff"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/Text2"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/Text2"
+            app:layout_constraintTop_toBottomOf="@+id/buttonHome" />
+
+        <TextView
+            android:id="@+id/text3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/comfortaa"
+            android:text="Ценовой диапазон (RUB)"
+            android:textColor="#ffffff"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/Text4"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/Text5"
+            app:layout_constraintTop_toBottomOf="@+id/room1" />
+
+        <TextView
+            android:id="@+id/Text5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/comfortaa"
+            android:text="Выберите сколько комнат"
+            android:textColor="#9EFFFFFF"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/Text4"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/Text4"
+            app:layout_constraintTop_toBottomOf="@+id/Text4" />
+
+        <TextView
+            android:id="@+id/text4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/comfortaa"
+            android:text="Введите значения в поля"
+            android:textColor="#9EFFFFFF"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/text3"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/text3"
+            app:layout_constraintTop_toBottomOf="@+id/text3" />
+
+        <Button
+            android:id="@+id/room1"
+            style="@style/Widget.MaterialComponents.TimePicker.Button"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#373745"
+            android:fontFamily="@font/comfortaa"
+            android:text="1"
+            android:textColor="#ffffff"
+            app:layout_constraintStart_toStartOf="@+id/costAfter"
+            app:layout_constraintTop_toBottomOf="@+id/Text5"
+            app:rippleColor="#000000" />
+
+        <Button
+            android:id="@+id/room2"
+            style="@style/Widget.MaterialComponents.TimePicker.Button"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#373745"
+            android:fontFamily="@font/comfortaa"
+            android:text="2"
+            android:textColor="#ffffff"
+            app:layout_constraintStart_toEndOf="@+id/room1"
+            app:layout_constraintTop_toBottomOf="@+id/Text5"
+            app:rippleColor="#000000" />
+
+        <Button
+            android:id="@+id/room3"
+            style="@style/Widget.MaterialComponents.TimePicker.Button"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="18dp"
+            android:backgroundTint="#373745"
+            android:fontFamily="@font/comfortaa"
+            android:text="3"
+            android:textColor="#ffffff"
+            app:layout_constraintEnd_toStartOf="@+id/room4"
+            app:layout_constraintHorizontal_bias="0.365"
+            app:layout_constraintStart_toEndOf="@+id/room2"
+            app:layout_constraintTop_toBottomOf="@+id/Text5"
+            app:rippleColor="#000000" />
+
+        <Button
+            android:id="@+id/room4"
+            style="@style/Widget.MaterialComponents.TimePicker.Button"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="18dp"
+            android:backgroundTint="#373745"
+            android:fontFamily="@font/comfortaa"
+            android:text="4"
+            android:textColor="#ffffff"
+            app:layout_constraintEnd_toStartOf="@+id/room5"
+            app:layout_constraintTop_toBottomOf="@+id/Text5"
+            app:rippleColor="#000000" />
+
+        <Button
+            android:id="@+id/room5"
+            style="@style/Widget.MaterialComponents.TimePicker.Button"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#373745"
+            android:fontFamily="@font/comfortaa"
+            android:text="5+"
+            android:textColor="#ffffff"
+            app:layout_constraintEnd_toEndOf="@+id/costBefore"
+            app:layout_constraintTop_toBottomOf="@+id/Text5"
+            app:rippleColor="#000000" />
+
+        <Button
+            android:id="@+id/buttonHome"
+            android:layout_width="145dp"
+            android:layout_height="185dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="#373745"
+            android:elevation="6dp"
+            android:fontFamily="@font/comfortaa"
+            android:stateListAnimator="@null"
+            android:text="Частный дом"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="#ffffff"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:translationZ="4dp"
+            app:icon="@drawable/house_icon"
+            app:iconGravity="top"
+            app:iconSize="100dp"
+            app:iconTint="#FFFFFF"
+            app:iconTintMode="multiply"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Text3" />
+
+        <Button
+            android:id="@+id/buttonHome2"
+            android:layout_width="145dp"
+            android:layout_height="185dp"
+            android:layout_marginEnd="24dp"
+            android:backgroundTint="#373745"
+            android:elevation="6dp"
+            android:fontFamily="@font/comfortaa"
+            android:stateListAnimator="@null"
+            android:text="Квартира"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="#ffffff"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:translationZ="4dp"
+            app:icon="@drawable/flat_icon"
+            app:iconGravity="top"
+            app:iconSize="100dp"
+            app:iconTint="#FFFFFF"
+            app:iconTintMode="multiply"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/buttonHome" />
+
+        <EditText
+            android:id="@+id/costAfter"
+            android:layout_width="153dp"
+            android:layout_height="55dp"
+            android:layout_below="@+id/text4"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/input_design"
+            android:ems="10"
+            android:fontFamily="@font/comfortaa"
+            android:hint="От"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:paddingStart="20dp"
+            android:textColor="#ffffff"
+            android:textColorHint="#A6A6A6"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/text4"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/text4"
+            app:layout_constraintTop_toBottomOf="@+id/text4" />
+
+        <EditText
+            android:id="@+id/costBefore"
+            android:layout_width="153dp"
+            android:layout_height="55dp"
+            android:layout_below="@+id/text4"
+            android:layout_marginStart="168dp"
+            android:background="@drawable/input_design"
+            android:ems="10"
+            android:fontFamily="@font/comfortaa"
+            android:hint="До"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:paddingStart="20dp"
+            android:textColor="#ffffff"
+            android:textColorHint="#A6A6A6"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/text4"
+            app:layout_constraintTop_toTopOf="@+id/costAfter" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

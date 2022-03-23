@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">HomeBuyProject</string>
+    <string name="location">Улица</string>
+    <string name="rub">Цена(RUB)</string>
+    <string name="_0">0</string>
+    <string name="info">Описание</string>
+    <string name="Create">Создать</string>
+    <string name="add">Добавление объявления</string>
+    <string name="square">Площадь</string>
+    <string name="roomsvalue">Количество комнат</string>
+</resources>
