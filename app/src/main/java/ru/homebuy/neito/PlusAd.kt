@@ -123,34 +123,25 @@ class PlusAd : AppCompatActivity() {
 
         RandomKey = saveCurrentDate + saveCurrentTime
 
-        val filePath: StorageReference = HouseImageRef!!.child(ImageUri!!.getLastPathSegment() + RandomKey + ".jpg")
+        val filePath: StorageReference = HouseImageRef!!.child(ImageUri!!.lastPathSegment + RandomKey + ".jpg")
 
         val UploadTask: UploadTask = filePath.putFile(ImageUri!!)
 
         UploadTask.addOnFailureListener { e ->
             val message = e.toString()
-            Toast.makeText(this, "Ошибка: $message", Toast.LENGTH_SHORT)
-                .show()
+            Toast.makeText(this, "Ошибка: $message", Toast.LENGTH_SHORT).show()
         }.addOnSuccessListener {
-            Toast.makeText(
-                this,
-                "Изображение успешно загружено.",
-                Toast.LENGTH_SHORT
-            ).show()
+            Toast.makeText(this, "Изображение успешно загружено.", Toast.LENGTH_SHORT).show()
             UploadTask.continueWithTask { task ->
                 if (!task.isSuccessful) {
                     throw task.exception!!
                 }
                 downloadImageUrl = filePath.downloadUrl.toString()
-                filePath.downloadUrl
+                return@continueWithTask filePath.downloadUrl
             }.addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     downloadImageUrl = task.result.toString()
-                    Toast.makeText(
-                        this,
-                        "Фото сохранено",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    Toast.makeText(this, "Фото сохранено", Toast.LENGTH_SHORT).show()
                     SaveProductInfoToDatabase()
                 }
             }
@@ -172,16 +163,16 @@ class PlusAd : AppCompatActivity() {
         productMap["squareV"] = squareView!!
 
 
-        HouseReference?.child(RandomKey!!)?.updateChildren(productMap)?.addOnCompleteListener(OnCompleteListener<Void?> { task ->
-                if (task.isSuccessful) {
-                    Toast.makeText(this, "Товар добавлен", Toast.LENGTH_SHORT).show()
-                    val loginIntent = Intent(this, PlusAd::class.java
-                    )
-                } else {
-                    val message = task.exception.toString()
-                    Toast.makeText(this, "Ошибка: $message", Toast.LENGTH_SHORT).show()
-                }
-            })
+        HouseReference?.child(RandomKey!!)?.updateChildren(productMap)?.addOnCompleteListener { task ->
+            if (task.isSuccessful) {
+                Toast.makeText(this, "Объявление добавлено", Toast.LENGTH_SHORT).show()
+                val AdIntent = Intent(this, MainActivity::class.java)
+                startActivity(AdIntent)
+            } else {
+                val message = task.exception.toString()
+                Toast.makeText(this, "Ошибка: $message", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
     private fun pickImageFromGallery() {
@@ -203,7 +194,7 @@ class PlusAd : AppCompatActivity() {
                     pickImageFromGallery()
                 }
                 else{
-                    Toast.makeText(this, "Permission denied", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Отказано в разрешении.", Toast.LENGTH_SHORT).show()
                 }
             }
         }
@@ -224,8 +215,8 @@ class PlusAd : AppCompatActivity() {
         squareView = findViewById(R.id.square)
         infoView = findViewById(R.id.info_house)
         selectButton = findViewById(R.id.button)
-        HouseImageRef = FirebaseStorage.getInstance().getReference().child("House Image")
-        HouseReference = FirebaseDatabase.getInstance().getReference().child("Houses")
+        HouseImageRef = FirebaseStorage.getInstance().reference.child("House Image")
+        HouseReference = FirebaseDatabase.getInstance().reference.child("Houses")
     }
 
 
