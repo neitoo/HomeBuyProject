@@ -38,12 +38,16 @@ class PlusAd : AppCompatActivity() {
     private var squareView: EditText ?=null
     private var infoView: EditText ?=null
 
+    private var closeButton: Button ?= null
     private var selectButton: Button ?=null
 
     val typeHouse = arrayOf("Квартира","Частный дом")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_plus_ad)
+
+        init()
 
         val arrayAdapter = ArrayAdapter(this@PlusAd,android.R.layout.simple_spinner_dropdown_item, typeHouse)
         spinner.adapter = arrayAdapter
@@ -58,7 +62,10 @@ class PlusAd : AppCompatActivity() {
 
         }*/
 
-        init()
+        closeButton?.setOnClickListener {
+            val closeAd = Intent(this, MainActivity::class.java)
+            startActivity(closeAd)
+        }
 
         houseImage?.setOnClickListener {
             if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
@@ -214,6 +221,7 @@ class PlusAd : AppCompatActivity() {
         roomsView = findViewById(R.id.room)
         squareView = findViewById(R.id.square)
         infoView = findViewById(R.id.info_house)
+        closeButton = findViewById(R.id.exitBuy)
         selectButton = findViewById(R.id.button)
         HouseImageRef = FirebaseStorage.getInstance().reference.child("House Image")
         HouseReference = FirebaseDatabase.getInstance().reference.child("Houses")
