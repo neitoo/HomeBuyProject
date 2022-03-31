@@ -168,6 +168,7 @@ class PlusAd : AppCompatActivity() {
         productMap["locationV"] = locationView!!
         productMap["roomsV"] = roomsView!!
         productMap["squareV"] = squareView!!
+        productMap["tpHouseV"] = typeHouse
 
 
         HouseReference?.child(RandomKey!!)?.updateChildren(productMap)?.addOnCompleteListener { task ->
