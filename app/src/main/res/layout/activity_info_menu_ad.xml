@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D0D0DC"
+    tools:layout_editor_absoluteX="1dp"
+    tools:layout_editor_absoluteY="-dp">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#D0D0DC"
+        tools:context=".InfoMenuAd">
+
+        <ImageView
+            android:id="@+id/select_home_image"
+            android:layout_width="wrap_content"
+            android:layout_height="232dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="40dp"
+            android:background="#3D3D4D"
+            android:backgroundTint="#373745"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/add_image"
+            tools:ignore="ContentDescription,ImageContrastCheck" />
+
+        <TextView
+            android:id="@+id/costMenuHouseAd"
+            android:layout_width="347dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/comfortaa"
+            android:text="₽4.000.000"
+            android:textColor="#3D3D4D"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/select_home_image" />
+
+        <TextView
+            android:id="@+id/locationMenuHouseAd"
+            android:layout_width="345dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/comfortaa"
+            android:inputType="textMultiLine"
+            android:text="улица"
+            android:textColor="#3D3D4D"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/costMenuHouseAd" />
+
+        <ImageView
+            android:id="@+id/bedroomMenuAd"
+            android:layout_width="42dp"
+            android:layout_height="37dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.086"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/locationMenuHouseAd"
+            app:srcCompat="@drawable/bedroom" />
+
+        <TextView
+            android:id="@+id/bedroomMenuAdValue"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/comfortaa"
+            android:text="5"
+            android:textAlignment="center"
+            android:textColor="#3D3D4D"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/bedroomMenuAd"
+            app:layout_constraintTop_toBottomOf="@+id/locationMenuHouseAd" />
+
+
+        <ImageView
+            android:id="@+id/squareMenuAd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="124dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/bedroomMenuAd"
+            app:layout_constraintTop_toBottomOf="@+id/locationMenuHouseAd"
+            app:srcCompat="@drawable/selection" />
+
+        <TextView
+            android:id="@+id/bedroomMenuAdValue2"
+            android:layout_width="58dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/comfortaa"
+            android:text="1445"
+            android:textAlignment="center"
+            android:textColor="#3D3D4D"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/squareMenuAd"
+            app:layout_constraintTop_toBottomOf="@+id/locationMenuHouseAd" />
+
+        <TextView
+            android:id="@+id/infoMenuHouseAd"
+            android:layout_width="349dp"
+            android:layout_height="187dp"
+            android:layout_marginTop="76dp"
+            android:fontFamily="@font/comfortaa"
+            android:inputType="textMultiLine"
+            android:text="Этот жилой комплекс премиум-класса, состоящий из 1445 просторных кондоминиумов с 5 спальнями и 3 ванными комнатами. Tiara отвечает ожиданиям взыскательных клиентов, которые стремятся вести спокойный и роскошный образ жизни."
+            android:textColor="#3D3D4D"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.515"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/locationMenuHouseAd" />
+
+        <TextView
+            android:id="@+id/numberHide"
+            android:layout_width="243dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="44dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/input_design"
+            android:fontFamily="@font/comfortaa"
+            android:paddingTop="12dp"
+            android:text="Показать номер"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/infoMenuHouseAd" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>

@@ -62,11 +62,11 @@
                     android:id="@+id/costHouseAd"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="20 000 Р"
-                    android:textStyle="bold"
                     android:fontFamily="@font/comfortaa"
+                    android:text="20 000 Р"
                     android:textColor="@color/white"
-                    android:textSize="20dp" />
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/locationAd"

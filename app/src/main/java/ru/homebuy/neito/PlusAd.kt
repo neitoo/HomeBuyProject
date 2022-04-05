@@ -37,6 +37,7 @@ class PlusAd : AppCompatActivity() {
     private var roomsView: EditText ?=null
     private var squareView: EditText ?=null
     private var infoView: EditText ?=null
+    private var phoneNumber: EditText ?= null
 
     private var closeButton: Button ?= null
     private var selectButton: Button ?=null
@@ -92,6 +93,7 @@ class PlusAd : AppCompatActivity() {
         val roomsCheck = roomsView?.text.toString().trim()
         val squareCheck = squareView?.text.toString().trim()
         val infoCheck = infoView?.text.toString().trim()
+        val numberCheck = phoneNumber?.text.toString().trim()
 
 
         if (costCheck.isNullOrBlank()) {
@@ -110,7 +112,24 @@ class PlusAd : AppCompatActivity() {
         else if (infoCheck.isNullOrBlank()) {
             infoView?.error = "Заполните описание!"
         }
-        else if (infoCheck.length <= 50) infoView?.error = "Длина описания не менее 50 символов!"
+        else if (infoCheck.length <= 50) {
+            infoView?.error = "Длина описания не менее 50 символов!"
+        }
+        else if (numberCheck.isNullOrBlank()) {
+            phoneNumber?.error = "Заполните номер телефона!"
+        }
+        else if (numberCheck[0] == '+' && numberCheck[1] != '7')  {
+            phoneNumber?.error = "Номер должен начинаться с 8 или +7!"
+        }
+        else if (numberCheck[0] != '8' && numberCheck[0] != '+' && numberCheck[1] != '7'){
+            phoneNumber?.error = "Номер должен начинаться с 8 или +7!"
+        }
+        else if (numberCheck[0] == '8' && numberCheck.length < 11 || numberCheck[0] == '+' && numberCheck[1] == '7' && numberCheck.length < 12)  {
+            phoneNumber?.error = "Номер должен содержать 11 или 12 цифр!"
+        }
+        else if (numberCheck[0] == '8' && numberCheck.length > 11 || numberCheck[0] == '+' && numberCheck[1] == '7' && numberCheck.length > 12)  {
+            phoneNumber?.error = "Номер должен содержать 11 или 12 цифр!"
+        }
         else HomeInformation()
     }
 
@@ -163,6 +182,7 @@ class PlusAd : AppCompatActivity() {
         productMap["date"] = saveCurrentDate!!
         productMap["time"] = saveCurrentTime!!
         productMap["infoV"] = infoView!!
+        productMap["numberV"] = phoneNumber!!
         productMap["image"] = downloadImageUrl!!
         productMap["costV"] = costView!!
         productMap["locationV"] = locationView!!
@@ -222,6 +242,7 @@ class PlusAd : AppCompatActivity() {
         roomsView = findViewById(R.id.room)
         squareView = findViewById(R.id.square)
         infoView = findViewById(R.id.info_house)
+        phoneNumber = findViewById(R.id.number)
         closeButton = findViewById(R.id.exitBuy)
         selectButton = findViewById(R.id.button)
         HouseImageRef = FirebaseStorage.getInstance().reference.child("House Image")
