@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.tasks.*
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.core.view.View
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.UploadTask
@@ -53,7 +54,12 @@ class PlusAd : AppCompatActivity() {
         val arrayAdapter = ArrayAdapter(this@PlusAd,android.R.layout.simple_spinner_dropdown_item, typeHouse)
         spinner.adapter = arrayAdapter
         /*spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+            override fun onItemSelected(
+                p0: AdapterView<*>?,
+                p1: android.view.View?,
+                p2: Int,
+                p3: Long
+            ) {
                 Toast.makeText(this@PlusAd,""+typeHouse[p2],Toast.LENGTH_SHORT).show()
             }
 
@@ -172,7 +178,6 @@ class PlusAd : AppCompatActivity() {
                 }
             }
         }
-
     }
 
     private fun SaveProductInfoToDatabase() {
@@ -248,7 +253,5 @@ class PlusAd : AppCompatActivity() {
         HouseImageRef = FirebaseStorage.getInstance().reference.child("House Image")
         HouseReference = FirebaseDatabase.getInstance().reference.child("Houses")
     }
-
-
 }
 
