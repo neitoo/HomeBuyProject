@@ -1,7 +1,6 @@
 package ru.homebuy.neito.Model
 
 class Houses {
-    private var tpHouseV: String
     private var costV: String
     private var locationV: String
     private var roomsV: String
@@ -16,8 +15,8 @@ class Houses {
 
     }
 
-    constructor(tpHouseV: String, costV: String, locationV: String, roomsV: String, squareV: String, image: String, infoV: String, put: String, date: String, time: String) {
-        this.tpHouseV = tpHouseV
+    constructor(costV: String, locationV: String, roomsV: String, squareV: String, image: String, infoV: String, put: String, date: String, time: String) {
+
         this.costV = costV
         this.locationV = locationV
         this.roomsV = roomsV
@@ -29,13 +28,7 @@ class Houses {
         this.time = time
     }
 
-    fun getTpHouseV(): String {
-        return tpHouseV
-    }
 
-    fun setTpHouseV(tpHouseV: String) {
-        this.tpHouseV = tpHouseV
-    }
     fun getCostV(): String {
         return costV
     }

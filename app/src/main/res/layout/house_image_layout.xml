@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="20dp"
+    android:layout_marginStart="15dp"
+    android:layout_marginEnd="15dp"
+    app:cardElevation="15dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="15dp"
+        android:layout_marginTop="8dp"
+        android:paddingBottom="10dp"
+        android:background="#3d3d4d">
+
+        <TextView
+            android:id="@+id/costHouseAd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/comfortaa"
+            android:text="20 000 Р"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/locationAd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/costHouseAd"
+            android:fontFamily="@font/comfortaa"
+            android:paddingBottom="6dp"
+            android:text="location"
+            android:textColor="#9EFFFFFF"
+            android:textSize="15dp" />
+
+        <ImageView
+            android:id="@+id/house_image"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_below="@id/locationAd"
+            android:background="@drawable/input_design"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/cropInfoAd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/house_image"
+            android:fontFamily="@font/comfortaa"
+            android:paddingTop="6dp"
+            android:paddingBottom="20dp"
+            android:text="info"
+            android:textColor="@color/white"
+            android:textSize="17dp" />
+
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>
