@@ -78,6 +78,7 @@ class MainActivity : AppCompatActivity() {
     var HouseReference: DatabaseReference? = null
     private var recyclerView: RecyclerView? = null
     var layoutManager: RecyclerView.LayoutManager? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -92,6 +93,7 @@ class MainActivity : AppCompatActivity() {
             val intentSet = Intent(this, setting_homes::class.java)
             startActivity(intentSet)
         }
+
         recyclerView = findViewById(R.id.recycler_menu)
         recyclerView?.setHasFixedSize(true)
         layoutManager = LinearLayoutManager(this)
@@ -102,6 +104,7 @@ class MainActivity : AppCompatActivity() {
         super.onStart()
         val options = FirebaseRecyclerOptions.Builder<Houses>()
             .setQuery(HouseReference!!, Houses::class.java).build()
+
         val adapter: FirebaseRecyclerAdapter<Houses, HouseViewHolder> =
             object : FirebaseRecyclerAdapter<Houses, HouseViewHolder>(options) {
                 override fun onBindViewHolder(

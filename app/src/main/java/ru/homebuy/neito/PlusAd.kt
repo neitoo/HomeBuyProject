@@ -44,6 +44,7 @@ class PlusAd : AppCompatActivity() {
     private var HouseImageRef: StorageReference? = null
     private var HouseReference: DatabaseReference? = null
     private var loadingBar: ProgressDialog? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_plus_ad)
@@ -52,7 +53,9 @@ class PlusAd : AppCompatActivity() {
             val closeAd = Intent(view.context, MainActivity::class.java)
             view.context.startActivity(closeAd)
         }
+
         houseImage!!.setOnClickListener { OpenGallery() }
+
         selectButton!!.setOnClickListener { ValidateProductData() }
     }
 
